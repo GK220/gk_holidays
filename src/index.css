@@ -128,31 +128,165 @@ body {
   text-shadow: 0 0 8px #ff00cc;
 }
 
+/* ...existing code... */
+
 /* Responsive Design */
-@media (max-width: 700px) {
+@media (max-width: 1024px) {
   .app-container {
-    padding: 10px 2vw;
+    max-width: 98vw;
+    padding: 18px 2vw 32px 2vw;
   }
   .navbar {
-    flex-direction: column;
-    gap: 12px;
-    padding: 12px 8px;
-  }
-  .navbar-links {
-    gap: 14px;
+    padding: 14px 12px;
+
   }
   .home-section,
   .about-section,
   .services-section,
   .gallery-section,
   .contact-section {
-    padding: 18px 4vw;
+    max-width: 98vw;
+    padding: 24px 2vw 18px 2vw;
     margin: 18px auto;
   }
+}
+
+@media (max-width: 700px) {
+  .app-container {
+    padding: 8px 1vw;
+    border-radius: 12px;
+  }
+  .navbar {
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px 4px;
+    border-radius: 12px;
+  }
+  .navbar-links {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .brand-title {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   .section-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+  }
+  .logo {
+    height: 36px;
+  }
+  .home-section,
+  .about-section,
+  .services-section,
+  .gallery-section,
+  .contact-section {
+    padding: 12px 2vw;
+    margin: 10px auto;
+    border-radius: 10px;
   }
 }
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 6px 2px;
+  }
+  .navbar-links {
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+  }
+  .brand-title {
+    font-size: 1rem;
+  }
+  .section-title {
+    font-size: 1rem;
+  }
+  .logo {
+    height: 28px;
+  }
+  .app-container {
+    padding: 4px 0.5vw;
+  }
+  .home-section,
+  .about-section,
+  .services-section,
+  .gallery-section,
+  .contact-section {
+    padding: 6px 1vw;
+    margin: 6px auto;
+  }
+}
+
+
+/* ...existing code... */
+
+/* Hamburger menu button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 12px;
+  z-index: 1002;
+}
+
+.menu-bar {
+  width: 28px;
+  height: 3px;
+  background: #ff00cc;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* Show hamburger on small screens */
+@media (max-width: 700px) {
+  .menu-toggle {
+    display: flex;
+    
+  }
+  .navbar-links {
+    position: absolute;
+    top: 68px;
+    right: 16px;
+    background: rgba(30, 30, 30, 0.98);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px #33339955;
+    padding: 12px 24px;
+    min-width: 160px;
+    display: none;
+    z-index: 1001;
+    
+  }
+  .navbar-links.open {
+    display: flex;
+    animation: fadeInMenu 0.2s;
+  }
+  .nav-link {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    margin: 0;
+  }
+}
+
+@keyframes fadeInMenu {
+  from { opacity: 0; transform: translateY(-10px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Ensure navbar is positioned for menu */
+.navbar {
+  position: relative;
+}
+
+/* ...existing code... */

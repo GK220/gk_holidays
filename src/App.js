@@ -1,21 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
-const Navbar = () => (
-  <nav className="navbar">
-    <div className="navbar-left">
-      <img src="/logo.png" alt="GK Holidays Logo" className="logo" />
-      <h1 className="brand-title">HOLIDAYS</h1>
-    </div>
-    <div className="navbar-links">
-      <Link to="/" className="nav-link">Home</Link>
-      <Link to="/about" className="nav-link">About Us</Link>
-      <Link to="/services" className="nav-link">Services</Link>
-      <Link to="/gallery" className="nav-link">Gallery</Link>
-      <Link to="/contact" className="nav-link">Contact</Link>
-    </div>
-  </nav>
-);
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Close menu on navigation
+  const handleNavClick = () => setMenuOpen(false);
+
+  return (
+    <nav className="navbar">
+      <div className="navbar-left">
+        <img src="/logo.png" alt="GK Holidays Logo" className="logo" />
+        <h1 className="brand-title">HOLIDAYS</h1>
+      </div>
+      <button
+        className="menu-toggle"
+        aria-label="Toggle menu"
+        onClick={() => setMenuOpen((open) => !open)}
+      >
+        <span className="menu-bar"></span>
+        <span className="menu-bar"></span>
+        <span className="menu-bar"></span>
+      </button>
+      <div className={`navbar-links${menuOpen ? " open" : ""}`}>
+        <Link to="/" className="nav-link" onClick={handleNavClick}>Home</Link>
+        <Link to="/about" className="nav-link" onClick={handleNavClick}>About Us</Link>
+        <Link to="/services" className="nav-link" onClick={handleNavClick}>Services</Link>
+        <Link to="/gallery" className="nav-link" onClick={handleNavClick}>Gallery</Link>
+        <Link to="/contact" className="nav-link" onClick={handleNavClick}>Contact</Link>
+      </div>
+    </nav>
+  );
+};
+
 
 const Home = () => (
   <section className="home-section">
@@ -74,6 +91,8 @@ const Contact = () => (
     </ul>
   </section>
 );
+
+
 
 export default function App() {
   return (
