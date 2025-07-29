@@ -1,1 +1,158 @@
-body { margin: 0; font-family: sans-serif; background: #000; color: #fff; }
+/* Import Google Fonts for a modern look */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(135deg, #ff00cc 0%, #333399 100%);
+  min-height: 100vh;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.app-container {
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 32px 24px 48px 24px;
+  background: rgba(30, 30, 30, 0.92);
+  border-radius: 28px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 2px solid #ff00cc;
+  min-height: 80vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.95);
+  color: #fff;
+  padding: 18px 36px;
+  border-radius: 18px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 12px #33339955;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.logo {
+  height: 48px;
+  width: auto;
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.brand-title {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 1px 1px 8px #33339988;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 6px 16px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-link:hover {
+  background: #ff00cc;
+  color: #fff;
+  box-shadow: 0 2px 8px #ff00cc55;
+}
+
+.section-title {
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 18px;
+  color: #ff00cc;
+  text-shadow: 2px 2px 12px #33339988;
+}
+
+.section-desc {
+  font-size: 1.2rem;
+  margin-bottom: 28px;
+  color: #fff;
+}
+
+.home-section,
+.about-section,
+.services-section,
+.gallery-section,
+.contact-section {
+  padding: 40px 24px 32px 24px;
+  background: rgba(40, 40, 60, 0.92);
+  margin: 32px auto;
+  border-radius: 22px;
+  max-width: 800px;
+  box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.25);
+}
+
+.services-list {
+  list-style: disc inside;
+  margin-left: 24px;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.contact-list {
+  font-size: 1.1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.insta-link {
+  color: #00acee;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.insta-link:hover {
+  color: #ff00cc;
+  text-shadow: 0 0 8px #ff00cc;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  .app-container {
+    padding: 10px 2vw;
+  }
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 8px;
+  }
+  .navbar-links {
+    gap: 14px;
+  }
+  .home-section,
+  .about-section,
+  .services-section,
+  .gallery-section,
+  .contact-section {
+    padding: 18px 4vw;
+    margin: 18px auto;
+  }
+  .brand-title {
+    font-size: 1.3rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
